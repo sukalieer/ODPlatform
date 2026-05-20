@@ -140,6 +140,7 @@ def get_dirs_to_initialize() -> List[Path]:
         SCRIPTS_DIR,
         DOCS_DIR,
         META_LOGGING_DIR,
+        DATASETS_CONFIG_DIR,
     ]
 
 def get_dirs_to_reset() -> list[Path]:
@@ -217,8 +218,12 @@ def is_protected(path: Path) -> bool:
             return True
     return False
 
-
-
+# ============================================================
+# 数据集流水线路径 (D3 新增)
+# ============================================================
+DATASETS_CONFIG_DIR: Path = CONFIGS_DIR / "datasets"
+INTERIM_DATA_DIR: Path = DATA_DIR / "interim"
+INTERIM_LABELS_DIR: Path = INTERIM_DATA_DIR / "labels"
 
 if __name__ == "__main__":
     print(f"ROOT_DIR (workspace) = {ROOT_DIR}")
