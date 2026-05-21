@@ -33,6 +33,10 @@ classifiers = [
 
 dependencies = [
     "colorlog>=6.7.0",
+     "scikit-learn>=1.3,<2.0",     # ★ D3 新增
+    "ultralytics>=8.0,<9.0",      # ★ D3 新增 (coco converter 用)
+    "pyyaml>=6.0",                # 可能 D2 已有, 不在则补
+    "pillow",                     # 造 broken_voc 测试数据时用到
 ]
 
 [project.optional-dependencies]
@@ -50,6 +54,7 @@ dev = [
 [project.scripts]
 odp-init = "odp_platform.cli.init_project:initialize_project"
 odp-reset= "odp_platform.cli.reset_project:main"
+odp-transform  = "odp_platform.cli.transform_data:main"               # ★ D3 新增
 
 # =============================================================================
 # Hatchling 配置 (告诉它两件事: 包源码在哪、版本号从哪读)

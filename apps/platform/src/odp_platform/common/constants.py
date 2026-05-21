@@ -28,7 +28,7 @@ class AnnotationFormat:
 
     @classmethod
     def all(cls) -> Tuple[str, ...]:
-        return (cls.PASCAL_VO, cls.COCO, cls.YOLO)
+        return (cls.PASCAL_VOC, cls.COCO, cls.YOLO)
 
 
 # ============================================================
