@@ -85,12 +85,10 @@ class CheckResult:
 class CheckContext:
     """Check 函数的入参 — 所有 check 函数签名都是 (ctx: CheckContext) -> CheckResult。
 
-    本阶段先放最简单的字段:
+    阶段 2 立的字段:
         yaml_path : 数据集 yaml 文件路径
-
-    阶段 4 引入 DatasetSnapshot 时, 这里会加 snapshot 字段 — 所有 check 改成消费
-    snapshot, 不再自己扫盘。届时函数签名仍然不变, 只是 ctx 里的可用资源变多了 —
-    这就是为什么我们把它做成一个对象, 而不是几个并列的位置参数。
+    阶段 4 加的字段:
+        snapshot  : DatasetSnapshot — 一次扫描产物, 供所有 check 共享消费
 
     未来扩展(D4.x / D5+):
         - previous_snapshot: 历史比较
@@ -99,6 +97,7 @@ class CheckContext:
     永远不改 check 函数签名 —— 这是 CheckContext 这层包装的全部意义。
     """
     yaml_path: Path
+    snapshot:  "DatasetSnapshot"   # 字符串前向引用, 避免循环 import
 
 
 # ============================================================

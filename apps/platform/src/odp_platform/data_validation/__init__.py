@@ -24,6 +24,10 @@ from odp_platform.data_validation.registry import (
     list_check_names,
 )
 from odp_platform.data_validation.service import run_all_checks
+from odp_platform.data_validation.snapshot import (
+    DatasetSnapshot, SplitStats, build_snapshot,
+)
+
 
 __all__ = [
     "CheckContext",
@@ -34,4 +38,7 @@ __all__ = [
     "get_check",
     "list_check_names",
     "run_all_checks",
+    "DatasetSnapshot",        # ← 阶段 4 新增
+    "SplitStats",             # ← 阶段 4 新增
+    "build_snapshot",         # ← 阶段 4 新增
 ]
