@@ -29,6 +29,7 @@ from odp_platform.data_validation.snapshot import (
 )
 from odp_platform.data_validation.report import ValidationReport
 from odp_platform.data_validation.render import render_to_logger
+from odp_platform.data_validation.service import run_all_checks, validate_dataset
 
 __all__ = [
     "CheckContext",
@@ -41,7 +42,8 @@ __all__ = [
     "run_all_checks",
     "DatasetSnapshot",        # ← 阶段 4 新增
     "SplitStats",             # ← 阶段 4 新增
-    "build_snapshot",         # ← 阶段 4 新增wq
+    "build_snapshot",         # ← 阶段 4 新增
     "ValidationReport",       # ← 阶段 8 新增
     "render_to_logger",       # ← 阶段 8 新增
+    "validate_dataset",  # ← 阶段 9 新增
 ]
